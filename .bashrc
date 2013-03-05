@@ -1,3 +1,7 @@
+#bashrc file used for school
+#Charles Cordova
+#some functions taken from others with credit
+
 #configs
 export CVSROOT="/home/cordovc3/CVSrep"
 
@@ -65,22 +69,23 @@ function say() { if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local tex
 #depending on exit status, draw green :) or red :(
 function exitstatus {
 
-        EXITSTATUS="$?"
+        EXITSTATUS="$?" #get exit status
 
-        if [ "$EXITSTATUS" -eq "0" ]
+        if [ "$EXITSTATUS" -eq "0" ] #if 0 then set to :)
         then
                 PS1="\[$(tput bold)\]\[$(tput setaf 1)\]\h\[$(tput setaf 6)\]/\W\[$(tput setaf 2)\] :) $\[$(tput sgr0)\] "
-        else
+        else    #last command failed :(
                 PS1="\[$(tput bold)\]\[$(tput setaf 1)\]\h\[$(tput setaf 6)\]/\W\[$(tput setaf 1)\] :( $\[$(tput sgr0)\] "
         fi
 
 }
 
-PROMPT_COMMAND=exitstatus
+PROMPT_COMMAND=exitstatus #run exitstatus to get propmt command after every command
 
-
-function extract()      # Handy Extract Program
-{                       # Author unknown
+# Handy Extract program. Given a file, depending on the filetype issue the correct command
+# Usage: extract somefile.7z
+function extract()      # Author unknown
+{                       
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1     ;;
