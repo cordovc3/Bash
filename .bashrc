@@ -40,8 +40,9 @@ alias ta="tmux attach-session -t 0"
 . ~/.to.sh
 
 #if on CF416-03 then reattach session
-if [ $(hostname) == "CF416-03" ]
-	then ta
+#if on CF416-03 then reattach session
+if [[ $(hostname) == "CF416-03" && "$TERM" !=  "screen" ]]
+        then ta
 fi
 
 #cd and ls
