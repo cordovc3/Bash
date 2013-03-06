@@ -1,6 +1,5 @@
 #configs
 export CVSROOT="/home/cordovc3/CVSrep"
-
 export VISUAL="gvim"
 export EDITOR="vim"
 
@@ -55,12 +54,6 @@ function cd()
 function mkcd()
 {
     mkdir -p "$1" && cd "$1"
-}
-
-function gp()
-{
-    git commit -m $1;
-    git push
 }
 
 #say function.
