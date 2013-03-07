@@ -1,3 +1,6 @@
+#temporary aliases
+alias t="python servertests.py -p 36709"
+
 #configs
 export CVSROOT="/home/cordovc3/CVSrep"
 export VISUAL="gvim"
