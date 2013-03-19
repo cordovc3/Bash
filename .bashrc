@@ -1,5 +1,6 @@
 #temporary aliases
 alias t="python servertests.py -p 36709"
+alias tel="telnet localhost 36709"
 
 #configs
 export CVSROOT="/home/cordovc3/CVSrep"
@@ -103,3 +104,5 @@ function extract()      # Handy Extract Program
         echo "'$1' is not a valid file!"
     fi
 }
+
+shopt -s cdspell 
